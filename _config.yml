@@ -3,8 +3,8 @@ title: Mindbox
 tagline: 'A Jekyll theme based on Lanyon'
 description: 'Mindbox: where to remember what I studied.'
 baseurl: ""
-url: http://ilguyi.github.io
-logo: '/public/logo.png'
+url: https://ilguyi.github.io
+#logo: '/public/logo.png'
 
 # Site configurations
 gems:
@@ -44,7 +44,7 @@ nav:
   About:          
     - '/about/'
   Github Project: 
-    - 'http://codinfox.github.io/'
+    - 'http://ilguyi.github.io/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
@@ -56,6 +56,6 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
-disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
+#google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+#disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
 
