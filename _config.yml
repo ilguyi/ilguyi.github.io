@@ -43,8 +43,8 @@ nav:
     - { Tags: '/blog/tags/' }
   About:          
     - '/about/'
-  Github Project: 
-    - 'http://github.com/ilguyi/'
+  #  Github Project: 
+  #  - 'http://github.com/ilguyi/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
