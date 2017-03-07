@@ -1,10 +1,10 @@
 # Site Info
 title: Mindbox
-tagline: ''
+tagline: '...'
 description: 'Mindbox: where to remember what I studied.'
 baseurl: ""
 url: https://ilguyi.github.io
-#logo: '/public/logo.png'
+logo: '/public/ilguyi.png'
 
 # Site configurations
 gems:
@@ -25,10 +25,11 @@ version: 1.0.0
 # About/contact
 author:
   name: Il Gu Yi
-  description: ''
+  description: 'Deep Learning Researcher'
   #gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
+  photo: '/public/ilguyi.png'
   contact:
-    #linkedin:  https://www.linkedin.com/in/lizhihao
+    linkedin:  https://www.linkedin.com/in/il-gu-yi-45127779/
     github:    https://github.com/ilguyi
     # facebook:  <hide>
     #email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
@@ -50,12 +51,12 @@ nav:
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+#hero:
+#  image: /public/img/we_will_be_giants_by_yalestewart.jpg
+#  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
 
 # Puglins
 mathjax: true # whether support mathjax
-#google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
-#disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
+google_analytics_token: '' # leave blank if you don't want google analytics
+disqus_short_name: '' # leave blank if you don't want disqus
 
