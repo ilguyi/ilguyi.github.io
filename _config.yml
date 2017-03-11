@@ -2,8 +2,8 @@
 title: Mindbox
 tagline: '...'
 description: 'Mindbox: where to remember what I studied.'
-baseurl: ""
 url: https://ilguyi.github.io
+baseurl: ''
 logo: '/public/ilguyi.png'
 
 # Site configurations
@@ -32,7 +32,7 @@ author:
     linkedin:  https://www.linkedin.com/in/il-gu-yi-45127779/
     github:    https://github.com/ilguyi
     # facebook:  <hide>
-    #email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
+    email:     http://www.google.com/recaptcha/mailhide/d?k=01VGFgHbzB9mUn30upTo4_ag==&c=VM0g2kIqgOfF5g979Sz-FdqNfLvGaQVlNJtj_cL3uXA=
 
 # Navigation (2nd level links supported)
 nav:
