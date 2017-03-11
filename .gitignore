@@ -43,3 +43,8 @@ bower_components
 
 # sass
 .sass-cache
+
+# favicon
+favicon1.ico
+favicon1.png
+apple-touch-icon-precomposed1.png
