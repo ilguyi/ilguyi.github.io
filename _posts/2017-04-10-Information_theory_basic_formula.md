@@ -84,3 +84,7 @@ D_{KL} (P || Q) &=& - \sum_{x} p(x) \log q(x) &+& \sum_{x} p(x) \log p(x) \\
 $$
 
 
+## References
+* Wikipedia
+
+
