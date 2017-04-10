@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Information theory basic formula
+title: Basic formula in information theory
 categories:
 - Machine Learning
 tags:
