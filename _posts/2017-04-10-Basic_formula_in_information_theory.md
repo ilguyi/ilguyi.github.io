@@ -20,7 +20,7 @@ Expectation of self-information
 
 $$ H(X) = \mathbb{E}_{X} [I(x)] $$
 
-$$ H(X) = - \sum_{i} p(x_{i}) \log p(x_{i}) $$
+$$ H(X) = - \sum_{x} p(x) \log p(x) $$
 
 $$ H(X) = - \int_{X} p(x) \log p(x) dx $$
 
