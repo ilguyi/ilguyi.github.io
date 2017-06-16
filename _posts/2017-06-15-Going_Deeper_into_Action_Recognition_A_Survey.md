@@ -97,7 +97,8 @@ $$ E_{\tau}(x, y, t) = \bigcup_{i=0}^{\tau - 1} D(x, y, t-i) $$
 
 
 ## 2. Local Representation based Approaches
-* interest point detection → local descriptor extraction → aggregation of local descriptors.
+* Pipeline of action recognition using local representation
+	* interest point detection → local descriptor extraction → aggregation of local descriptors.
 
 
 ### 2.1 Interest Point Detection
@@ -134,8 +135,8 @@ $$ E_{\tau}(x, y, t) = \bigcup_{i=0}^{\tau - 1} D(x, y, t-i) $$
 
 ### 3.1 Spatiotemporal networks
 * Filters learned by CNN
-  * In very first layers: *low* level features (ex. Gabor-like filters)
-  * In top layers: *high* level semantics
+  * in very first layers: *low* level features (ex. Gabor-like filters)
+  * in top layers: *high* level semantics
 * Direct approach
   * apply convolution operation with temporal information
   * *3D convolution* [Ji et al. (2013)](http://ieeexplore.ieee.org/document/6165309/) [^fn5]
@@ -153,6 +154,7 @@ $$ E_{\tau}(x, y, t) = \bigcup_{i=0}^{\tau - 1} D(x, y, t-i) $$
 * Recurrent structure 
   * Long-term Recurrent Convolutional Network [Donahue et al. (2015)](https://arxiv.org/pdf/1411.4389.pdf) [^fn10]
   * Delving (GRU-RCN) [Ballas et al. (2016)](https://arxiv.org/pdf/1511.06432.pdf) [^fn11]
+  	* above paper is not mentioned in this survey paper
 
 ![Long-temRCN]({{ url }}/assets/2017-06-15/Long-termRCN.png){:width="70%"}
 ![GRU-RCN]({{ url }}/assets/2017-06-15/GRU-RCN.png){:width="90%"}
