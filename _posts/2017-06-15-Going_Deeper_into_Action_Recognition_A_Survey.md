@@ -10,6 +10,8 @@ tags:
 ---
 
 # Going Deeper into Action Recognition: A Survey
+* Paper summary
+* Going Deeper into Action Recognition: A Survey [Herath et al. (2016)](https://arxiv.org/pdf/1605.04988.pdf)
 
 ## Abstract
 * The broad range of applications
@@ -36,18 +38,18 @@ tags:
   * to complex joint movement of a group of limbs and body
   * *action* seems to be hard to define
 
-* Moeslund and Granum (2006); Poppe (2010)
+* [Moeslund and Granum (2006)](http://www.sciencedirect.com/science/article/pii/S1077314206001263) [^fn1]; [Poppe (2010)](http://www.sciencedirect.com/science/article/pii/S0262885609002704) [^fn2]
   * *action primitives* as "an atomic movement that can be described at the limb level"
   * *action*: a diverse range of movements, from "simple and primitive ones" to "cyclic body movements"
   * *activity*: "a number of subsequent actions, representing a complex movement
     * Ex) left leg forward: action primitive of running
     * Ex) jumping hurdles: activity performed with the actions starting, running and jumping
-* Turaga et al. (2008)
+* [Turaga et al. (2008)](http://ieeexplore.ieee.org/document/4633644/) [^fn3]
   * *action*: "simple motion patterns usually executed by a single person and typically lasting for a very short duration (order of tens of seconds)"
   * *activity*: "a complex sequence of actions performed by several humans who could be interacting with each other in a constrained manner.
     * Ex) actions: walking, running, or swimming
     * Ex) activity: tow persons shaking hands or a football team scoring a goal
-* Wang et al. (2016)
+* [Wang et al. (2016)](http://ieeexplore.ieee.org/document/7780660/) [^fn4]
   * *action*: "the change of transformation an action brings to the environment"
     * Ex) kicking a ball
 
@@ -136,29 +138,29 @@ $$ E_{\tau}(x, y, t) = \bigcup_{i=0}^{\tau - 1} D(x, y, t-i) $$
   * In top layers: *high* level semantics
 * Direct approach
   * apply convolution operation with temporal information
-  * *3D convolution* [Ji et al. (2013)](http://ieeexplore.ieee.org/document/6165309/) [^fn1]
+  * *3D convolution* [Ji et al. (2013)](http://ieeexplore.ieee.org/document/6165309/) [^fn5]
     * 3D kernels: extract features from both spatial and temporal dimensions
     * *conv3d* has fixed temporal domain (ex. fixed 10 frame input)
     * it is unclear why a similar assumption should be made across the temporal domain
 * Various Fusion Schemes
-  * Temporal pooling [Ng et al. (2015)](https://arxiv.org/pdf/1503.08909.pdf) [^fn2]
-  * Slow fusion [Karpathy et al. (2014)](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42455.pdf) [^fn3]
+  * Temporal pooling [Ng et al. (2015)](https://arxiv.org/pdf/1503.08909.pdf) [^fn6]
+  * Slow fusion [Karpathy et al. (2014)](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42455.pdf) [^fn7]
 
 ![SlowFusion]({{ url }}/assets/2017-06-15/slowFusion.png){:width="90%"}
 
-* C3D [Tran et al. (2015)](https://arxiv.org/pdf/1412.0767.pdf) [^fn4]
-* Factorizing conv3d into conv2d and conv1d [Sun et al. (2015)](http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Sun_Human_Action_Recognition_ICCV_2015_paper.pdf) [^fn5]
+* C3D [Tran et al. (2015)](https://arxiv.org/pdf/1412.0767.pdf) [^fn8]
+* Factorizing conv3d into conv2d and conv1d [Sun et al. (2015)](http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Sun_Human_Action_Recognition_ICCV_2015_paper.pdf) [^fn9]
 * Recurrent structure 
-  * Long-term Recurrent Convolutional Network [Donahue et al. (2015)](https://arxiv.org/pdf/1411.4389.pdf) [^fn6]
-  * Delving (GRU-RCN) [Ballas et al. (2016)](https://arxiv.org/pdf/1511.06432.pdf) [^fn7]
+  * Long-term Recurrent Convolutional Network [Donahue et al. (2015)](https://arxiv.org/pdf/1411.4389.pdf) [^fn10]
+  * Delving (GRU-RCN) [Ballas et al. (2016)](https://arxiv.org/pdf/1511.06432.pdf) [^fn11]
 
 ![Long-temRCN]({{ url }}/assets/2017-06-15/Long-termRCN.png){:width="70%"}
 ![GRU-RCN]({{ url }}/assets/2017-06-15/GRU-RCN.png){:width="90%"}
 
 
 ### 3.2 Multiple Stream Networks
-* Fig(b) Two-stream network [Simonyan and Zisserman (2014)](https://arxiv.org/pdf/1406.2199.pdf) [^fn8]
-* Fig(c) Two-stream fusion network [Feichtenhofer et al. (2016)](https://arxiv.org/pdf/1604.06573.pdf) [^fn9]
+* Fig(b) Two-stream network [Simonyan and Zisserman (2014)](https://arxiv.org/pdf/1406.2199.pdf) [^fn12]
+* Fig(c) Two-stream fusion network [Feichtenhofer et al. (2016)](https://arxiv.org/pdf/1604.06573.pdf) [^fn13]
 
 ![Two-stream]({{ url }}/assets/2017-06-15/Two-stream.png)
 
@@ -194,7 +196,7 @@ less relevant to my works
   * KTH and Weizmann (low complexity)
     * limited camera motion, almost zero background clutter
     * scope is limited
-    * basic actions: waliking, running and jumping
+    * basic actions: walking, running and jumping
   * YouTube, movies and TV (ex. HMDB-51, UCF-101)
     * camera motion (and shake)
     * view-point variations
@@ -225,12 +227,12 @@ less relevant to my works
 #### State-of-the-art solutions
 * Deep-net solutions
   * The spatiotemporal networks
-    * [Karpathy et al. (2014)](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42455.pdf) [^fn3]
-    * [Tran et al. (2015)](https://arxiv.org/pdf/1412.0767.pdf) [^fn4]
-    * [Varol et al. (2016)](https://arxiv.org/pdf/1604.04494.pdf) [^fn10]
+    * [Karpathy et al. (2014)](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42455.pdf) [^fn7]
+    * [Tran et al. (2015)](https://arxiv.org/pdf/1412.0767.pdf) [^fn8]
+    * [Varol et al. (2016)](https://arxiv.org/pdf/1604.04494.pdf) [^fn14]
   * Two-stream networks 
-    * [Simonyan and Zisserman (2014)](https://arxiv.org/pdf/1406.2199.pdf) [^fn8]
-    * [Feichtenhofer et al. (2016)](https://arxiv.org/pdf/1604.06573.pdf) [^fn9]
+    * [Simonyan and Zisserman (2014)](https://arxiv.org/pdf/1406.2199.pdf) [^fn12]
+    * [Feichtenhofer et al. (2016)](https://arxiv.org/pdf/1604.06573.pdf) [^fn13]
   * More rigorous data augmentation
     * temporal crops by random clip sampling
     * frame skipping
@@ -251,13 +253,17 @@ We must fully understand the following areas in order to apply action recognitio
 
 
 ## References
-[^fn1]: S. Ji, W. Xu, M. Yang, and K. Yu. 3d convolutional neural networks for human action recognition. IEEE Trans. Pattern Analysis and Machine Intelligence, 35(1):221–231, Jan 2013. ISSN 0162-8828.
-[^fn2]: Joe Yue-Hei Ng, M. Hausknecht, S. Vijayanarasimhan, O. Vinyals, R. Monga, and G. Toderici. Beyond short snippets: Deep networks for video classification. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 4694–4702, 2015.
-[^fn3]: Andrej Karpathy, George Toderici, Sanketh Shetty, Thomas Leung, Rahul Sukthankar, and Li Fei-Fei. Large-scale video classification with convolutional neural networks. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1725–1732, 2014.
-[^fn4]: D. Tran, L. Bourdev, R. Fergus, L. Torresani, and M. Paluri. Learning spatiotemporal features with 3d convolutional networks. In Proc. Int. Conference on Computer Vision (ICCV), pages 4489–4497, Dec 2015.
-[^fn5]: L. Sun, K. Jia, D. Y. Yeung, and B. E. Shi. Human action recognition using factorized spatiotemporal convolutional networks. In Proc. Int. Conference on Computer Vision (ICCV), pages 4597–4605, Dec 2015.
-[^fn6]: Jeff Donahue, Lisa Anne Hendricks, Sergio Guadarrama, Marcus Rohrbach, Subhashini Venugopalan, Kate Saenko, and Trevor Darrell. Long-term recurrent convolutional networks for visual recognition and description. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2625–2634, 2015.
-[^fn7]: Nicolas Ballas, Li Yao, Chris Pal, Aaron Courville. Delving deeper into convolutional networks for learning video representations. arXiv:1511.06432, 2016.
-[^fn8]: Karen Simonyan and Andrew Zisserman. Two-stream convolutional networks for action recognition in videos. In Proc. Advances in Neural Information Processing Systems (NIPS), pages 568–576, 2014.
-[^fn9]: Christoph Feichtenhofer, Axel Pinz, and Andrew Zisserman. Convolutional two-stream network fusion for video action recognition. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1933–1941, 6 2016.
-[^fn10]: Gül Varol, Ivan Laptev, and Cordelia Schmid. Long-term Temporal Convolutions for Action Recognition. arXiv:1604.04494, 2016.
+[^fn1]: Thomas B. Moeslund and Erik Granum. A survey of advances in vision-based human motion capture and analysis. Computer Vision and Image Understanding, 104(3):90–127, 2006.
+[^fn2]: Ronald Poppe. A survey on vision-based human action recognition. Image Vision Comput., 28(6): 976–990, 2010.
+[^fn3]: P. Turaga, R. Chellappa, V. S. Subrahmanian, and O. Udrea. Machine recognition of human activities: A survey. IEEE Transactions on Circuits and Systems for Video Technology, 18(11): 1473–1488, 2008.
+[^fn4]: Xiaolong Wang, Ali Farhadi, and Abhinav Gupta. Actions ~ transformations. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2658–2667, 2016.
+[^fn5]: S. Ji, W. Xu, M. Yang, and K. Yu. 3d convolutional neural networks for human action recognition. IEEE Trans. Pattern Analysis and Machine Intelligence, 35(1):221–231, Jan 2013. ISSN 0162-8828.
+[^fn6]: Joe Yue-Hei Ng, M. Hausknecht, S. Vijayanarasimhan, O. Vinyals, R. Monga, and G. Toderici. Beyond short snippets: Deep networks for video classification. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 4694–4702, 2015.
+[^fn7]: Andrej Karpathy, George Toderici, Sanketh Shetty, Thomas Leung, Rahul Sukthankar, and Li Fei-Fei. Large-scale video classification with convolutional neural networks. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1725–1732, 2014.
+[^fn8]: D. Tran, L. Bourdev, R. Fergus, L. Torresani, and M. Paluri. Learning spatiotemporal features with 3d convolutional networks. In Proc. Int. Conference on Computer Vision (ICCV), pages 4489–4497, Dec 2015.
+[^fn9]: L. Sun, K. Jia, D. Y. Yeung, and B. E. Shi. Human action recognition using factorized spatiotemporal convolutional networks. In Proc. Int. Conference on Computer Vision (ICCV), pages 4597–4605, Dec 2015.
+[^fn10]: Jeff Donahue, Lisa Anne Hendricks, Sergio Guadarrama, Marcus Rohrbach, Subhashini Venugopalan, Kate Saenko, and Trevor Darrell. Long-term recurrent convolutional networks for visual recognition and description. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2625–2634, 2015.
+[^fn11]: Nicolas Ballas, Li Yao, Chris Pal, Aaron Courville. Delving deeper into convolutional networks for learning video representations. arXiv:1511.06432, 2016.
+[^fn12]: Karen Simonyan and Andrew Zisserman. Two-stream convolutional networks for action recognition in videos. In Proc. Advances in Neural Information Processing Systems (NIPS), pages 568–576, 2014.
+[^fn13]: Christoph Feichtenhofer, Axel Pinz, and Andrew Zisserman. Convolutional two-stream network fusion for video action recognition. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1933–1941, 6 2016.
+[^fn14]: Gül Varol, Ivan Laptev, and Cordelia Schmid. Long-term Temporal Convolutions for Action Recognition. arXiv:1604.04494, 2016.
