@@ -21,7 +21,7 @@ tags:
 	* enable high-level abstract representations
   * Scaled exponential linear units (SELUs)
   * Banach fixed-point theorem
-		* activations will converge toward zero mean and unit variance
+    * activations will converge toward zero mean and unit variance
 	* vanishing and exploding gradients are **impossible**
 	* [Github link](https://github.com/bioinf-jku/SNNs)
 
