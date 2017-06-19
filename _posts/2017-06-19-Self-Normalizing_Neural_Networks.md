@@ -213,8 +213,60 @@ $$ \begin{align}
 
 ##### Jacobian of $g$
 
-$$ \mathcal{J}(\mu, \nu) $$
+$$ \mathcal{J}(\mu, \nu) = \left( \begin{array}{cc}
+  \frac{\partial \tilde{\mu}}{\partial \mu} & \frac{\partial \tilde{\mu}}{\partial \nu} \\
+  \frac{\partial \tilde{\nu}}{\partial \mu} & \frac{\partial \tilde{\nu}}{\partial \nu} \\
+\end{array} \right) $$
 
+##### useful calculations
+* $\mu = \tilde{\mu} = 0$ and $\nu = \tilde{\nu} = 1$
+* $\omega = 0$ and $\tau = 1$
+* $\textrm{erf}(0) = 0$ and $\textrm{erfc}(0) = 1$
+* $\frac{\textrm{d}}{\textrm{d} x} \textrm{erf}(x) = \frac{2}{\sqrt{\pi}} e^{-x^{2}}$
+  * $\left. \frac{\textrm{d}}{\textrm{d} x} \textrm{erf}(x) \right\|_{x=0} = \frac{2}{\sqrt{\pi}}$
+* $\frac{\textrm{d}}{\textrm{d} x} \textrm{erfc}(x) = \frac{\textrm{d}}{\textrm{d} x} (1 - \textrm{erf}(x))
+  =  - \frac{\textrm{d}}{\textrm{d} x} \textrm{erf}(x)$
+  * $\left. \frac{\textrm{d}}{\textrm{d} x} \textrm{erfc}(x) \right\|_{x=0} = -\frac{2}{\sqrt{\pi}}$
+
+
+##### insert $\mu = \tilde{\mu} = 0$,  $\nu = \tilde{\nu} = 1$,  $\omega = 0$ and $\tau = 1$ into Eq. (4) and (5)
+
+$$ 0 = \frac{1}{2} \lambda \left( \alpha e^{1/2} \textrm{erfc}\left(\frac{1}{\sqrt{2}}\right)
+      - \alpha + \sqrt{\frac{2}{\pi}} \right) $$
+
+$$ 1 = \frac{1}{2} \lambda^{2} \left( 1 + \alpha^{2} \left( -2 e^{1/2} \textrm{erfc}\left(\frac{1}{\sqrt{2}}\right)
+      + e^{2} \textrm{erfc}\left(\frac{2}{\sqrt{2}}\right) + 1 \right) \right) $$
+
+$$ \therefore \alpha = -\sqrt{\frac{2}{\pi}} \left[ e^{1/2} \textrm{erfc} \left(\frac{1}{\sqrt{2}}\right) - 1 \right]^{-1} $$
+
+$$ \therefore \lambda = \sqrt{2} \left[ 1 + \alpha^{2} \left( -2 e^{1/2} \textrm{erfc}\left(\frac{1}{\sqrt{2}}\right)
+      + e^{2} \textrm{erfc}\left(\frac{2}{\sqrt{2}}\right) + 1 \right) \right]^{-1/2} $$
+
+##### python code
+
+```python
+In [0]: from scipy.special import erfc
+In [1]: import math
+In [2]: alpha = -math.sqrt(2/math.pi) / (math.exp(0.5) * erfc(1/math.sqrt(2)) - 1)
+In [3]: l = math.sqrt(2) / math.sqrt(1 + alpha**2 * (-2 * math.exp(0.5) * erfc(1/math.sqrt(2)) + math.exp(2) * erfc(2/math.sqrt(2)) + 1))
+In [4]: alpha
+Out[4]: 1.6732632423543778
+In [5]: l
+Out[5]: 1.0507009873554805
+```
+
+
+
+
+
+
+##### calculation of $\frac{\partial \tilde{\mu}}{\partial \mu}$
+
+blackboard
+
+##### calculation of $\frac{\partial \tilde{\mu}}{\partial \nu}$
+
+blackboard
 
 
 
