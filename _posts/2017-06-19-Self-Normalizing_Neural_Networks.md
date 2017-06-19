@@ -54,7 +54,7 @@ tags:
 
 ![Fig1]({{ url }}/assets/2017-06-19/fig1.png){:width="100%"}
 
-<p align="center"> Figure 1. The training error (y-axis) on left: MNIST, right: CIFAR-10. FNN with bn exhibit *high variance* due to perturbations. </p>
+<p align="center"> Figure 1. The training error (y-axis) on left: MNIST, right: CIFAR-10. FNN with bn exhibit high variance due to perturbations. </p>
 
 
 
@@ -67,8 +67,8 @@ tags:
 * **activation function**: $f$
 * **weight matrix**: $\bf{W}$
 * **activations in the lower layer**: $\bf{x}$
-* **network inputs**: $\bf{z} = \bf{W} \bf{x}$
-* **activations in the higher layer**: $\bf{y} = f(\bf{z})$
+* **network inputs**: $\mathbf{z} = \mathbf{W} \mathbf{x}$
+* **activations in the higher layer**: $\mathbf{y} = f(\mathbf{z})$
 * activations $\bf{x}, \bf{y}$ and inputs $\bf{z}$ are random variables
 
 #### Assume
@@ -270,7 +270,9 @@ blackboard
 
 
 
-
+# To be continue
+아직 정리가 덜 됐습니다.
+조만간 정리해서 올리도록 하겠습니다.
 
 
 
