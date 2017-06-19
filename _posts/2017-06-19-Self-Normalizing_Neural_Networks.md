@@ -96,7 +96,7 @@ $$ \left( \begin{array}{c} \mu \\ \nu \end{array} \right)
 \left( \begin{array}{c} \tilde{\mu} \\ \tilde{\nu} \end{array} \right) 
 = g \left( \begin{array}{c} \mu \\ \nu \end{array} \right) $$
 
-* mappgin $g$ keeps $(\mu, \nu)$ and $(\tilde{\mu}, \tilde{\nu})$ close to predefined values, typically $(0, 1)$
+* mapping $g$ keeps $(\mu, \nu)$ and $(\tilde{\mu}, \tilde{\nu})$ close to predefined values, typically $(0, 1)$
   * like most normalization techniques: batch, layer, or weight normalization
 
 #### Notation summary
