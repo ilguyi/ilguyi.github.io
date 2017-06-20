@@ -270,7 +270,7 @@ blackboard
 
 
 
-# To be continue
+# To be continued
 아직 정리가 덜 됐습니다.
 조만간 정리해서 올리도록 하겠습니다.
 
