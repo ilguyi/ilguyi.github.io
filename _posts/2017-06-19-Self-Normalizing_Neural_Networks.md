@@ -245,14 +245,14 @@ $$ \therefore \lambda = \sqrt{2} \left[ 1 + \alpha^{2} \left( -2 e^{1/2} \textrm
 ##### python code
 
 ```python
-In [0]: from scipy.special import erfc
-In [1]: import math
-In [2]: alpha = -math.sqrt(2/math.pi) / (math.exp(0.5) * erfc(1/math.sqrt(2)) - 1)
-In [3]: l = math.sqrt(2) / math.sqrt(1 + alpha**2 * (-2 * math.exp(0.5) * erfc(1/math.sqrt(2)) + math.exp(2) * erfc(2/math.sqrt(2)) + 1))
-In [4]: alpha
-Out[4]: 1.6732632423543778
-In [5]: l
-Out[5]: 1.0507009873554805
+In [1]: from scipy.special import erfc
+In [2]: import math
+In [3]: alpha = -math.sqrt(2/math.pi) / (math.exp(0.5) * erfc(1/math.sqrt(2)) - 1)
+In [4]: l = math.sqrt(2) / math.sqrt(1 + alpha**2 * (-2 * math.exp(0.5) * erfc(1/math.sqrt(2)) + math.exp(2) * erfc(2/math.sqrt(2)) + 1))
+In [5]: alpha
+Out[5]: 1.6732632423543778
+In [6]: l
+Out[6]: 1.0507009873554805
 ```
 
 
