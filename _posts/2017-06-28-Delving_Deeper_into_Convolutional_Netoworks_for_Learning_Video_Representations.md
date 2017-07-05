@@ -155,7 +155,7 @@ $$ \begin{split}
 1. GRU-RCN
   * number of feature maps: 64, 128, 256, 256, 512
   * `average pooling` in last time step $T$
-    * ex) Layer 1: `pool2` (56 x 56 x 64) $\rightarrow$ (1 x 1 x 64)로 바꿔주기 위함
+  * ex) Layer 1: `pool2` (56 x 56 x 64) $\rightarrow$ (1 x 1 x 64)로 바꿔주기 위함
   * 각각을 다섯개의 classifier로 보냄
   * 한 classifier는 하나의 hidden representation에만 focus를 맞추고 학습
   * 최종 결정은 다섯개의 classifier average로 결정
@@ -203,7 +203,7 @@ $$ \mathcal{L} = \frac{1}{N} \sum_{n=1}^{N} \log p( y^{n} | c({\bf x}^{n}), {\bf
 * VGG16이 이미 10장의 연속된 이미지를 가지고 학습하기 때문에 그런 것 같음
 
 ##### RGB + Flow
-* Details: Wang et al., (2015b)
+* Details: [Wang et al., (2015b)](https://arxiv.org/pdf/1507.02159.pdf) [^fn8]
 * 두 모델을 각각 돌리고 weighted linear combination
 * baseline: fusion VGG-16: 89.1; state-of-art: 90.9 (Wang)
 * Combining Bi-directional GRU-RCN: 90.8
@@ -222,7 +222,7 @@ $$ \mathcal{L} = \frac{1}{N} \sum_{n=1}^{N} \log p( y^{n} | c({\bf x}^{n}), {\bf
   * K equally-space segments(K=10)
   * 10개로 segment를 나누고 각각의 VGG-16에서 fc7 layer를 뽑아냄
   * 마지막 time step에서 합치고 (concatenate) 그걸 input 으로 사용
-* Decoder: LSTM text-generator with soft-attention, [Yao et. al. (2015b)](https://arxiv.org/abs/1502.08029) [^fn8]
+* Decoder: LSTM text-generator with soft-attention, [Yao et. al. (2015b)](https://arxiv.org/abs/1502.08029) [^fn9]
 
 #### 5.2.2 Training
 
@@ -254,6 +254,7 @@ $$ \mathcal{L} = \frac{1}{N}
 [^fn5]: Andrej Karpathy, George Toderici, Sanketh Shetty, Thomas Leung, Rahul Sukthankar, and Li Fei-Fei. Large-scale video classification with convolutional neural networks. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1725–1732, 2014.
 [^fn6]: D. Tran, L. Bourdev, R. Fergus, L. Torresani, and M. Paluri. Learning spatiotemporal features with 3d convolutional networks. In Proc. Int. Conference on Computer Vision (ICCV), pages 4489–4497, Dec 2015.
 [^fn7]: Karen Simonyan and Andrew Zisserman. Two-stream convolutional networks for action recognition in videos. In Proc. Advances in Neural Information Processing Systems (NIPS), pages 568–576, 2014.
-[^fn8]: Yao, Li, Torabi, Atousa, Cho, Kyunghyun, Ballas, Nicolas, Pal, Christopher, Larochelle, Hugo, and Courville, Aaron. Describing videos by exploiting temporal structure. In Computer Vision (ICCV), 2015 IEEE International Conference on. IEEE, 2015b.
+[^fn8]: Wang, Limin, Xiong, Yuanjun, Wang, Zhe, and Qiao, Yu. Towards good practices for very deep two-stream convnets. arXiv preprint arXiv:1507.02159, 2015b.
+[^fn9]: Yao, Li, Torabi, Atousa, Cho, Kyunghyun, Ballas, Nicolas, Pal, Christopher, Larochelle, Hugo, and Courville, Aaron. Describing videos by exploiting temporal structure. In Computer Vision (ICCV), 2015 IEEE International Conference on. IEEE, 2015b.
 
 
