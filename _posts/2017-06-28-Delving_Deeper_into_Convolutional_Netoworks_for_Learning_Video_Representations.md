@@ -45,7 +45,7 @@ tags:
   * Drawbacks: frame-to-frame에서 temporal variation이 크지 않음
 * Novel architecture
   * top-layer + middle-layers
-  * GRU-RNN: conv2d ops instead of fc ops in RNN cell
+  * GRU-RNN: `conv2d ops` instead of `fc ops` in RNN cell
  
 
 
@@ -86,7 +86,7 @@ $$ \begin{split}
 {\bf h}_{t}^{l} & = (1 - {\bf z}_{t}^{l}) {\bf h}_{t-1}^{l} + {\bf z}_{t}^{l} \tilde{\bf h}_{t}^{l},\\
 \end{split} $$
 
-* $ \mathbf{h}_t^{l} = \phi^{l}(\mathbf{x}_t^{l}, \mathbf{h}_{t-1}^{l}) $
+* $ \mathbf{h}_t^l$ $= \phi^l(\mathbf{x}_t^l,$ $$ \mathbf{h}_{t-1}^{l}) $$
 * $*$: `conv2d ops`
 * 맨 마지막 시점의 hidden들$(\mathbf{h}_{T}^{1}, \cdots, \mathbf{h}_T^{L})$을 가지고 classify
 * `fc ops`: conv maps의 특성을 반영하지 못함
@@ -94,11 +94,13 @@ $$ \begin{split}
 
 #### number of parameters
 * number of parameters in GRU
-  * Size of ${\bf W}^{l}$, ${\bf W}_{z}^{l}$, and ${\bf W}_{r}^{l}$: $N_{1} \times N_{2} \times O_{x} \times O_{h}$
-  * $N$: input spatial size, $O_{x}$: input channels, $O_{h}$: size of hidden node
+  * Size of $\mathbf{W}^{l}$, $\mathbf{W}_{z}^{l}$  and  $$\mathbf{W}_{r}^{l}$$: 
+    * $N_{1} \times N_{2} \times O_{x} \times O_{h}$
+    * $N$: input spatial size, $O_{x}$: input channels, $O_{h}$: size of hidden node
 * number of parameters in GRU-RCN
-  * Size of ${\bf W}^{l}$, ${\bf W}_{z}^{l}$, and ${\bf W}_{r}^{l}$: $k_{1} \times k_{2} \times O_{x} \times O_{h}$
-  * $k$: kernel size; usually $3 \times 3 \ll N_{1} \times N_{2}$
+  * Size of $\mathbf{W}^{l}$, $\mathbf{W}_{z}^{l}$  and  $$\mathbf{W}_{r}^{l}$$:
+    * $k_{1} \times k_{2} \times O_{x} \times O_{h}$
+    * $k$: kernel size; usually $3 \times 3 \ll N_{1} \times N_{2}$
 
 
 ### 3.2 Stacked GRU-RCN
@@ -114,8 +116,9 @@ $$ \begin{split}
 {\bf h}_{t}^{l} & = (1 - {\bf z}_{t}^{l}) {\bf h}_{t-1}^{l} + {\bf z}_{t}^{l} \tilde{\bf h}_{t}^{l},\\
 \end{split} $$
 
-* ${\bf h}_{t}^{l} = \phi^{l}({\bf x}_{t}^{l}, {\bf h}_{t-1}^{l}, {\bf h}_{t}^{l-1})$, current time step and previous layer
-* $*$: conv2d ops
+* $\mathbf{h}_{t}^{l}$ $$= \phi^{l}(\mathbf{x}_{t}^{l},$$ $$\mathbf{h}_{t-1}^{l},$$ $$\mathbf{h}_{t}^{l-1})$$
+  * add $\mathbf{h}_{t}^{l-1}$: current time step and previous layer
+* $*$: `conv2d ops`
 
 
 
@@ -137,8 +140,12 @@ $$ \begin{split}
 #### 5.1.1 Model Architecture
 
 * VGG-16: (ImageNet pertained $\rightarrow$ UCF-101로 fine tuning)
-* extract 5 feature maps: pool2, pool3, pool4, pool5, and fc-7
+* extract 5 feature maps: `pool2`, `pool3`, `pool4`, `pool5`, and `fc-7`
 * 위의 feature map들이 RCN 모델의 ${\bf x}_{t}^{l}$ input
+  * $\mathbf{x}_{t}^{1}$: `pool2`
+  * $\mathbf{x}_{t}^{2}$: `pool3`
+  * $\vdots$
+  * $\mathbf{x}_{t}^{5}$: `fc-7`
 * UCF-101 dataset
   * 101 action, 13320 youtube video clips
 
@@ -147,8 +154,8 @@ $$ \begin{split}
 
 1. GRU-RCN
   * number of feature maps: 64, 128, 256, 256, 512
-  * average pooling in last time step $T$
-  * ex. Layer 1 - pool2) (56 x 56 x 64) $\rightarrow$ (1 x 1 x 64)로 바꿔주기 위함
+  * `average pooling` in last time step $T$
+    * ex) Layer 1: `pool2` (56 x 56 x 64) $\rightarrow$ (1 x 1 x 64)로 바꿔주기 위함
   * 각각을 다섯개의 classifier로 보냄
   * 한 classifier는 하나의 hidden representation에만 focus를 맞추고 학습
   * 최종 결정은 다섯개의 classifier average로 결정
@@ -179,7 +186,8 @@ $$ \mathcal{L} = \frac{1}{N} \sum_{n=1}^{N} \log p( y^{n} | c({\bf x}^{n}), {\bf
 ##### Baseline result
 
 * VGG-16: pre-trained ImageNet and fine tune on the UCF-101
-* VGG-16 RNN: fc7을 GRU의 input (fc)
+* VGG-16 RNN: `fc-7`을 GRU의 input 으로 넣음
+   * GRU cell이 `fully connected`
 * VGG-16 RNN(78.1) $>$ VGG-16(78.0): slightly improve
 * CNN top-layer가 temporal information을 많이 잃어버렸다는 증거
 
