@@ -7,6 +7,8 @@ tags:
 - Deep Learning
 - Regularization
 - Normalization
+- SELUs
+- 모두의 연구소 발표
 ---
 
 # Self-Normalizing Neural Networks
