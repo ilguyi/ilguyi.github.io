@@ -245,6 +245,11 @@ $$ \mathcal{L} = \frac{1}{N}
 
 
 
+## Miscellaneous
+* [발표자료다운](https://www.dropbox.com/s/k7zgpyx4edcx3xi/delving.pdf?dl=1)
+* [모두의 연구소 자료 링크](http://www.modulabs.co.kr/index.php?mid=DeepLAB_library&page=4&document_srl=943)
+
+
 
 ## References
 [^fn1]: Srivastava, N., Mansimov, E., and Salakhutdinov, R. Unsupervised learning of video representations using lstms. In ICML, 2015.
