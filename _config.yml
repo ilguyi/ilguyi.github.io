@@ -44,7 +44,7 @@ nav:
     - { Tags: '/blog/tags/' }
   About:          
     - '/about/'
-  DLbook
+  DLbook:
     - '/dlbook/'
   #  Github Project: 
   #  - 'http://github.com/ilguyi/'
