@@ -25,7 +25,7 @@ version: 1.0.0
 # About/contact
 author:
   name: Il Gu Yi
-  description: 'Deep Learning Researcher'
+  description: 'Research scientist on Deep Learning'
   #gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   photo: '/public/ilguyi.png'
   contact:
@@ -44,8 +44,8 @@ nav:
     - { Tags: '/blog/tags/' }
   About:          
     - '/about/'
-  DLbook:
-    - '/dlbook/'
+  #DLbook:
+  #  - '/dlbook/'
   #  Github Project: 
   #  - 'http://github.com/ilguyi/'
 
